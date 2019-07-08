@@ -3,10 +3,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<header class="site-header outer">
-    <div class="inner">
-    </div>
-</header>
+{{> header }}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -18,10 +15,7 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-                    {{#primary_tag}}
-                        <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
+                    <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD HH:mm"}}">{{date format="D MMMM YYYY"}}</time>
                 </section>
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
@@ -61,17 +55,6 @@ into the {body} of the default.hbs template --}}
 
             <footer class="post-full-footer">
 
-                {{!-- There are two options for how we display the byline/author-info.
-                If the post has more than one author, we load a specific template
-                from includes/byline-multiple.hbs, otherwise, we just use the
-                default byline. --}}
-
-                {{#has author="count:>1"}}
-                    {{!-- {{> "byline-multiple"}} --}}
-                {{else}}
-                    {{!-- {{> "byline-single"}} --}}
-                {{/has}}
-
             </footer>
 
             {{!--
@@ -89,57 +72,25 @@ into the {body} of the default.hbs template --}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-            {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <article class="read-next-card"
-                    {{#if ../primary_tag.feature_image}}
-                        style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                    {{else}}
-                        {{#if @site.cover_image}}
-                            style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
-                    {{/if}}
-                >
-                    <header class="read-next-card-header">
-                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
-                        {{#../primary_tag}}
-                        <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                        {{/../primary_tag}}
-                    </header>
-                    <div class="read-next-divider">
-                        {{!-- {{> "icons/infinity"}} --}}
-                        </div>
-                    <div class="read-next-card-content">
-                        <ul>
-                            {{#foreach related_posts}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                            {{/foreach}}
-                        </ul>
-                    </div>
-                    <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
-                    </footer>
-                </article>
-                {{/if}}
-            {{/get}}
-            {{/if}}
-
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
             {{#next_post}}
-                {{!-- {{> "post-card"}} --}}
+                {{> "post-card-inner-next"}}
             {{/next_post}}
+
+            <div class="clearfix"></div>
 
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
             {{#prev_post}}
-                {{!-- {{> "post-card"}} --}}
+                {{> "post-card-inner-prev"}}
             {{/prev_post}}
 
         </div>
     </div>
 </aside>
 
+<div class="clearfix"></div>
+
 {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
-{{!-- {{> floating-header}} --}}
 
 {{/post}}
 
