@@ -1,0 +1,39 @@
+{
+    "name": "seyfeddin-ghost-theme",
+    "description": "Ghost blog theme for seyfedd.in",
+    "version": "0.1.0",
+    "keywords": [
+        "ghost-theme"
+    ],
+    "engines": {
+        "ghost-api": "v2"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Seyfeddin Bassarac",
+        "email": "seyfeddin@wearethread.co"
+    },
+    "config": {
+        "posts_per_page": 10,
+        "image_sizes": {}
+    },
+    "devDependencies": {
+        "autoprefixer": "9.6.0",
+        "cssnano": "4.1.10",
+        "gulp": "4.0.2",
+        "gulp-refresh": "1.1.0",
+        "gulp-postcss": "8.0.0",
+        "gulp-sass": "4.0.2",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-autoprefixer": "6.1.0",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
+        "gulp-zip": "5.0.0",
+        "gulp-plumber": "1.2.1",
+        "gulp-sass-partials-imported": "1.0.7",
+        "postcss-color-function": "4.1.0",
+        "postcss-custom-properties": "8.0.10",
+        "postcss-easy-import": "3.0.0",
+        "browser-sync": "2.26.7"
+    }
+}

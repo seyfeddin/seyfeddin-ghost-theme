@@ -1,0 +1,24 @@
+{{!< default}}
+{{! The tag above means: insert everything in this file
+into the {body} of the default.hbs template }}
+
+{{> header }}
+
+<section id="posts">
+    <h1>
+      Writing <em>in</em> <select name="post-category-select" id="post-category">
+        <option>English</option>
+      </select>
+    </h1>
+    {{#foreach posts limit="6"}}
+      <article class="home-post">
+        <a class="home-post-content-link" href="{{url}}">
+          <time datetime="{{date published_at format="YYYY-MM-DD HH:mm"}}">{{date published_at format="DD MMMM YYYY"}}</time>
+          <h2 class="home-post-title">
+            {{title}}
+          </h2>
+        </a>
+      </article>
+    {{/foreach}}
+
+  </section>
