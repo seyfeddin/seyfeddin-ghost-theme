@@ -132,6 +132,10 @@ table {
 .clearfix {
   clear: both; }
 
+img,
+svg {
+  vertical-align: middle; }
+
 @font-face {
   font-family: 'GraphikCompact-Regular';
   src: url(../fonts/GraphikCompact-Regular.eot);
@@ -459,12 +463,15 @@ article.home-post {
   font-size: 1.3125rem;
   line-height: 1.875rem;
   background: #F2F2F2;
-  color: #1A1A1A;
-  width: 46rem; }
+  color: #1A1A1A; }
   .post-full-content a {
     text-decoration: underline;
     -webkit-text-decoration-color: #999999;
             text-decoration-color: #999999; }
+  @media (prefers-color-scheme: dark) {
+    .post-full-content a {
+      -webkit-text-decoration-color: #B6B6B6;
+              text-decoration-color: #B6B6B6; } }
   .post-full-content p,
   .post-full-content ol,
   .post-full-content ul,
@@ -478,7 +485,10 @@ article.home-post {
   .post-full-content pre {
     font: inherit;
     margin-bottom: 30px;
-    padding: 0 24px; }
+    padding: 0 24px;
+    width: 46rem;
+    margin-left: auto;
+    margin-right: auto; }
   .post-full-content code {
     font-family: "SFMono-Regular", monospace; }
   .post-full-content p {
@@ -520,10 +530,24 @@ article.home-post {
     font-size: 1rem;
     margin-top: 2.25rem;
     margin-bottom: 1rem; }
+  .post-full-content hr {
+    background-color: #BFBFBF;
+    max-width: 46rem;
+    height: 2px;
+    border: none;
+    margin: 2rem auto 2rem; }
   .post-full-content blockquote {
     font-size: 125%;
     line-height: 2.375rem;
-    padding: 30px 48px; }
+    padding: 30px 96px;
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto; }
+    .post-full-content blockquote p {
+      display: inline;
+      text-align: left;
+      padding: 0; }
     .post-full-content blockquote em {
       font-family: "Calluna-It", Georgia, serif; }
       .post-full-content blockquote em strong {
@@ -583,45 +607,64 @@ article.home-post {
       color: #FF000D; } }
 
 .post-content {
-  max-width: 920px; }
+  max-width: 100vw; }
 
 .post-template .post-content > p:first-child {
   font-size: 1.25em;
   line-height: 1.5em; }
 
 .post-full-content .kg-image {
-  max-width: 100%; }
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto; }
 
 /* Preventing full-width image overlap with post image.  */
 .post-full-image + .post-full-content .kg-content *:first-child .kg-image {
   width: 100%; }
 
 .kg-width-wide .kg-image {
-  max-width: 1040px; }
+  max-width: 100%; }
 
 .kg-width-full .kg-image {
   max-width: 100vw; }
 
 .post-full-content figure {
-  margin: 1.5em 0 3em; }
+  margin: 1.5em 0 3em;
+  background-color: #F9F9F9; }
 
 .post-full-content figure img {
-  margin: 0; }
+  margin: 0;
+  background-color: #F2F2F2; }
 
-.post-full-content figcaption {
-  margin: 1.0em 0 0;
-  font-size: 80%;
-  line-height: 1.6em;
-  text-align: center; }
+.post-full-content .kg-card-hascaption figcaption {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: "Calluna-It", Georgia, serif;
+  color: #999999; }
+
+@media (prefers-color-scheme: dark) {
+  .post-full-content figure {
+    background-color: #353535; }
+    .post-full-content figure img {
+      background-color: #191919; }
+  .post-full-content figcaption {
+    color: #B6B6B6; } }
 
 .kg-width-full figcaption {
   padding: 0 1.5em; }
 
 .kg-embed-card {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%; }
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F2F2 !important; }
+
+@media (prefers-color-scheme: dark) {
+  .kg-embed-card {
+    background-color: #191919 !important; } }
 
 .kg-embed-card .fluid-width-video-wrapper {
   margin: 0; }
@@ -653,7 +696,15 @@ article.home-post {
 .kg-gallery-card + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-gallery-card,
 .kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide {
-  margin: -2.25em 0 3em; }
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+.kg-card.kg-image-card {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 46rem; }
 
 /* keep existing <pre> styles for code cards with captions */
 .kg-code-card {
@@ -926,7 +977,8 @@ article.post-card-inner {
     .post-full-content pre {
       font: inherit;
       margin-bottom: 24px;
-      padding: 0 24px; }
+      padding: 0 24px;
+      width: auto; }
     .post-full-content code {
       font-family: "SFMono-Regular", monospace; }
     .post-full-content h1,
@@ -979,13 +1031,22 @@ article.post-card-inner {
     .post-full-content blockquote {
       font-size: 1.25rem;
       line-height: 1.75rem;
-      padding: 30px 48px; }
+      padding: 30px 24px; }
     .post-full-content ol {
       padding: 0 36px 0 24px; }
     .post-full-content ul {
       padding: 0 36px 0 24px; }
+    .post-full-content hr {
+      max-width: 70vw; }
   .about {
-    width: auto; } }
+    width: auto; }
+  .kg-card.kg-image-card {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 100vw; }
+  .post-full-content .kg-image {
+    max-width: 100vw; } }
 
 @media (prefers-color-scheme: dark) {
   article.post-card-inner.prev h4 svg, article.post-card-inner.next h4 svg {
