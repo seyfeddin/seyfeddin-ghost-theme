@@ -1,0 +1,21 @@
+<nav>
+    <ul>
+      {{#foreach navigation}}
+      <li {{#if current}}class="nav-current"{{/if}}>
+        <a href="{{url absolute="true"}}">
+          {{label}}
+        </a>
+      </li>
+      {{/foreach}}
+      <li>
+        <a href="#" class="disabled">
+          Books
+        </a>
+      </li>
+      <li>
+        <a href="#" class="disabled">
+          Work
+        </a>
+      </li>
+    </ul>
+  </nav>

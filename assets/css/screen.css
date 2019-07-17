@@ -216,10 +216,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #1A1A1A; }
+  color: #1A1A1A;
+  transition: color .2s ease; }
   a.disabled {
     color: #999999;
     text-decoration: line-through; }
+  a:hover {
+    color: #999999; }
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -227,6 +230,8 @@ a {
     color: #F2F2F2; }
   a {
     color: #F2F2F2; }
+    a:hover {
+      color: #B6B6B6; }
   .disabled {
     color: #B6B6B6; } }
 
@@ -251,8 +256,8 @@ header.site-header {
   background: none;
   position: relative;
   opacity: 0;
-  -webkit-animation: 1s ease-out 0.5s 1 forwards fadein;
-          animation: 1s ease-out 0.5s 1 forwards fadein; }
+  -webkit-animation: 0.2s ease-out 0.2s 1 forwards fadein;
+          animation: 0.2s ease-out 0.2s 1 forwards fadein; }
   header.site-header .title {
     float: left; }
   header.site-header h1,
@@ -276,10 +281,17 @@ header.site-header {
         margin-right: 24px; }
         header.site-header nav ul li :last-child {
           margin-right: 0px; }
+        header.site-header nav ul li.nav-current a {
+          -webkit-text-decoration-color: #999999;
+                  text-decoration-color: #999999;
+          text-decoration: underline; }
 
 @media (prefers-color-scheme: dark) {
   header.site-header h2.title {
-    color: #B6B6B6; } }
+    color: #B6B6B6; }
+  nav ul.nav-current a {
+    -webkit-text-decoration-color: #999999;
+            text-decoration-color: #999999; } }
 
 footer.site-footer {
   background-color: #FFFFFF;
@@ -306,7 +318,10 @@ footer.site-footer {
 
 .about {
   width: 35rem;
-  margin: 60px auto; }
+  margin: 60px auto;
+  -webkit-animation: 0.2s ease-out 0.2s 1 forwards fadein;
+          animation: 0.2s ease-out 0.2s 1 forwards fadein;
+  opacity: 0; }
   .about p {
     margin-top: 0;
     font-size: 131.25%;
@@ -878,22 +893,7 @@ article.post-card-inner {
           -webkit-animation: none;
                   animation: none; }
     article.post-card-inner a {
-      background-color: inherit; } }
-
-@media screen and (max-width: 800px) and (prefers-color-scheme: dark) {
-  article.post-card-inner.prev h4 svg, article.post-card-inner.next h4 svg {
-    fill: #F2F2F2; }
-    article.post-card-inner.prev h4 svg > path, article.post-card-inner.next h4 svg > path {
-      fill: #F2F2F2; }
-  article.post-card-inner .post-card-content {
-    background: #353535;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15); }
-    article.post-card-inner .post-card-content h2.post-card-title {
-      font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
-    article.post-card-inner .post-card-content time.post-full-meta-date {
-      color: #B6B6B6; } }
-
-@media screen and (max-width: 800px) {
+      background-color: inherit; }
   #main {
     display: block;
     margin-top: 34px; }
@@ -981,3 +981,16 @@ article.post-card-inner {
       padding: 0 36px 0 24px; }
   .about {
     width: auto; } }
+
+@media (prefers-color-scheme: dark) {
+  article.post-card-inner.prev h4 svg, article.post-card-inner.next h4 svg {
+    fill: #F2F2F2; }
+    article.post-card-inner.prev h4 svg > path, article.post-card-inner.next h4 svg > path {
+      fill: #F2F2F2; }
+  article.post-card-inner .post-card-content {
+    background: #353535;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15); }
+    article.post-card-inner .post-card-content h2.post-card-title {
+      font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
+    article.post-card-inner .post-card-content time.post-full-meta-date {
+      color: #B6B6B6; } }

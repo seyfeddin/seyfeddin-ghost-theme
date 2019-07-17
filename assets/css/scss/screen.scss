@@ -286,9 +286,13 @@ body {
 a {
     text-decoration: none;
     color: $text-color;
+    transition: color .2s ease;
     &.disabled {
         color: $light-text-color;
         text-decoration: line-through;
+    }
+    &:hover {
+        color: $light-text-color;
     }
 }
 
@@ -299,6 +303,9 @@ a {
     }
     a {
         color: $dark-text-color;
+        &:hover {
+            color: $dark-light-text-color;
+        }
     }
     &.disabled {
         color: $dark-light-text-color;
@@ -331,7 +338,7 @@ header.site-header {
     background: none;
     position: relative;
     opacity: 0;
-    animation: 1s ease-out 0.5s 1 forwards fadein;
+    animation: 0.2s ease-out 0.2s 1 forwards fadein;
     .title {
         float: left;
     }
@@ -359,6 +366,12 @@ header.site-header {
                  :last-child {
                     margin-right: 0px;
                 }
+                &.nav-current {
+                    a {
+                        text-decoration-color: $light-text-color;
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -368,6 +381,15 @@ header.site-header {
     header.site-header {
         h2.title {
             color: $dark-light-text-color;
+        }
+    }
+    nav {
+        ul {
+            &.nav-current {
+                a {
+                    text-decoration-color: $light-text-color;
+                }
+            }
         }
     }
 }
@@ -407,6 +429,8 @@ footer.site-footer {
 .about {
     width: 35rem;
     margin: 60px auto;
+    animation: 0.2s ease-out 0.2s 1 forwards fadein;
+    opacity: 0;
     p {
         margin-top: 0;
         font-size: 131.25%;
@@ -1141,31 +1165,6 @@ article.post-card-inner {
             background-color: inherit;
         }
     }
-    @media (prefers-color-scheme: dark) {
-        article.post-card-inner {
-            &.prev,
-            &.next {
-                h4 {
-                    svg {
-                        fill: $dark-text-color;
-                        >path {
-                            fill: $dark-text-color;
-                        }
-                    }
-                }
-            }
-            .post-card-content {
-                background: $dark-header-background;
-                box-shadow: $dark-shadow-1;
-                h2.post-card-title {
-                    font-family: $font-family-bold;
-                }
-                time.post-full-meta-date {
-                    color: $dark-light-text-color;
-                }
-            }
-        }
-    }
     #main {
         display: block;
         margin-top: 34px;
@@ -1273,5 +1272,31 @@ article.post-card-inner {
     }
     .about {
         width: auto;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    article.post-card-inner {
+        &.prev,
+        &.next {
+            h4 {
+                svg {
+                    fill: $dark-text-color;
+                    >path {
+                        fill: $dark-text-color;
+                    }
+                }
+            }
+        }
+        .post-card-content {
+            background: $dark-header-background;
+            box-shadow: $dark-shadow-1;
+            h2.post-card-title {
+                font-family: $font-family-bold;
+            }
+            time.post-full-meta-date {
+                color: $dark-light-text-color;
+            }
+        }
     }
 }
