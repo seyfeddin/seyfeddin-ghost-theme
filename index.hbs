@@ -6,11 +6,16 @@ into the {body} of the default.hbs template }}
 
 <section id="posts">
     <h1>
-      Writing <em>in</em> <select name="post-category-select" id="post-category">
-        <option>English</option>
+      Writing <em>in</em> <select name="post-category-select" id="post-category" onchange="location = this.value;">
+        <option value="/writing/">All Categories</option>
+        {{#get "tags" limit="all"}}
+          {{#foreach tags as |post_tag|}}
+            <option value="/tag/{{post_tag.slug}}">{{post_tag.name}}</option>
+          {{/foreach}}
+        {{/get}}
       </select>
     </h1>
-    {{#foreach posts limit="6"}}
+    {{#foreach posts}}
       <article class="home-post">
         <a class="home-post-content-link" href="{{url}}">
           <time datetime="{{date published_at format="YYYY-MM-DD HH:mm"}}">{{date published_at format="DD MMMM YYYY"}}</time>
@@ -20,5 +25,5 @@ into the {body} of the default.hbs template }}
         </a>
       </article>
     {{/foreach}}
-    <a href="#" class="all-posts">See all posts</a>
+    {{!-- <a href="#" class="all-posts">See all posts</a> --}}
   </section>

@@ -136,13 +136,23 @@ table {
 // Colors
 $light-text-color: #999999;
 $lighter-gray-color: #BFBFBF;
-$lighter-gray-color: #BFBFBF;
 $lightest-gray-color: #E6E6E6;
-$dark-text-color: #1A1A1A;
+$text-color: #1A1A1A;
 $site-background-color: #F2F2F2;
 $header-background: #F9F9F9;
 $footer-background: #FFFFFF;
 $background-color-dark: #191919;
+$red-color: #EF0000;
+// Dark Mode Colors
+$dark-light-text-color: #B6B6B6;
+$dark-lighter-gray-color: #939393;
+$dark-lightest-gray-color: #757575;
+$dark-text-color: #F2F2F2;
+$dark-site-background-color: #191919;
+$dark-header-background: #353535;
+$dark-footer-background: #000000;
+$dark-background-color: #191919;
+$dark-red-color: #FF000D;
 // Fonts
 $font-family: "GraphikCompact-Regular",
 --apple-system,
@@ -168,11 +178,17 @@ serif;
 $font-family-text-italic: "Calluna-It",
 Georgia,
 serif;
+$shadow-1: 0 1px 2px rgba($color: #000000, $alpha: 0.2),
+0 4px 8px rgba($color: #000000, $alpha: 0.15);
+$dark-shadow-1: inset 0 1px 1px rgba($color: #FFF, $alpha: 0.1),
+0 1px 2px rgba($color: #000000, $alpha: 0.2),
+0 4px 8px rgba($color: #000000, $alpha: 0.15);
 
 /* Seyfeddin SCSS */
 
 :root {
     color-scheme: light dark;
+    font-size: 100%;
 }
 
 .clearfix {
@@ -256,7 +272,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: $font-family;
-    color: $dark-text-color;
+    color: $text-color;
 }
 
 html,
@@ -269,10 +285,23 @@ body {
 
 a {
     text-decoration: none;
-    color: $dark-text-color;
+    color: $text-color;
     &.disabled {
         color: $light-text-color;
         text-decoration: line-through;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $dark-site-background-color;
+        color: $dark-text-color;
+    }
+    a {
+        color: $dark-text-color;
+    }
+    &.disabled {
+        color: $dark-light-text-color;
     }
 }
 
@@ -287,6 +316,11 @@ a {
     margin: 0 24px;
 }
 
+#main,
+#posts {
+    min-height: calc(100vh - 310px);
+}
+
 header.site-header {
     display: block;
     top: 0;
@@ -295,7 +329,7 @@ header.site-header {
     padding: 50px 70px 24px 70px;
     text-align: left;
     background: none;
-    position: sticky;
+    position: relative;
     opacity: 0;
     animation: 1s ease-out 0.5s 1 forwards fadein;
     .title {
@@ -330,7 +364,15 @@ header.site-header {
     }
 }
 
-footer {
+@media (prefers-color-scheme: dark) {
+    header.site-header {
+        h2.title {
+            color: $dark-light-text-color;
+        }
+    }
+}
+
+footer.site-footer {
     background-color: $footer-background;
     padding: 24px 70px 18px 70px;
     .social {
@@ -347,8 +389,23 @@ footer {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    footer.site-footer {
+        background-color: $dark-footer-background;
+        svg {
+            fill: $dark-text-color;
+            >path {
+                fill: $dark-text-color;
+            }
+            >g>path {
+                fill: $dark-text-color;
+            }
+        }
+    }
+}
+
 .about {
-    width: 35em;
+    width: 35rem;
     margin: 60px auto;
     p {
         margin-top: 0;
@@ -356,7 +413,7 @@ footer {
         line-height: 1.375;
         margin-bottom: 1.375em;
         small {
-            font-size: 0.75em;
+            font-size: 75%;
         }
         span {
             &.disabled {
@@ -373,6 +430,19 @@ footer {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .about {
+        span {
+            &.disabled {
+                color: $dark-light-text-color;
+            }
+            &.description {
+                color: $dark-light-text-color;
+            }
+        }
+    }
+}
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -384,11 +454,10 @@ select {
 
 #posts {
     margin: 60px auto;
-    width: 35em;
+    width: 46rem;
     h1 {
         font-size: 187.5%;
         font-family: $font-family-bold;
-        color: $dark-text-color;
         padding: 0 24px;
         margin-bottom: 24px;
         em {
@@ -408,6 +477,19 @@ select {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    #posts {
+        h1 {
+            em {
+                color: $dark-lighter-gray-color;
+            }
+            select {
+                color: $dark-light-text-color;
+            }
+        }
+    }
+}
+
 article.home-post {
     margin: 0 auto;
     border-bottom: none;
@@ -416,7 +498,7 @@ article.home-post {
     &:hover {
         background-color: $footer-background;
         border-radius: 6px;
-        box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2), 0 4px 8px rgba($color: #000000, $alpha: 0.15);
+        box-shadow: $shadow-1;
         padding: 32px 24px 36px 24px;
     }
     time {
@@ -433,14 +515,48 @@ article.home-post {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    article.home-post {
+        &:hover {
+            background-color: $dark-header-background;
+            box-shadow: $dark-shadow-1;
+        }
+        time {
+            color: $dark-light-text-color;
+        }
+    }
+}
+
+#site-main {
+    article {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        header.post-full-header {
+            padding: 0;
+            width: 46rem;
+            margin: 0 auto;
+            background-color: $site-background-color;
+            margin-bottom: 28px;
+        }
+    }
+}
+
 .post-full-meta {
-    margin-bottom: 6px;
+    display: inline-block;
+    margin: 0 auto;
+    color: $light-text-color;
+    time {
+        margin-bottom: 6px;
+        display: inline-block;
+        font-size: 1rem;
+    }
 }
 
 .post-full-title {
-    font-size: 187.5%;
+    font-size: 1.875rem;
     font-family: $font-family-bold;
     line-height: 1.1333333333;
+    margin: 0 auto;
 }
 
 .post-full-image {
@@ -456,15 +572,32 @@ article.home-post {
     object-fit: cover;
 }
 
+@media (prefers-color-scheme: dark) {
+    #site-main {
+        article {
+            header.post-full-header {
+                background-color: $dark-site-background-color;
+            }
+        }
+    }
+    .post-full-meta {
+        color: $dark-light-text-color;
+    }
+    .post-full-image {
+        background: $dark-site-background-color center center;
+    }
+}
+
 .post-full-content {
     position: relative;
     margin: 0 auto;
     min-height: 230px;
     font-family: $font-family-text;
-    font-size: 100%;
-    line-height: 1.4;
+    font-size: 1.3125rem;
+    line-height: 1.875rem;
     background: $site-background-color;
-    color: $dark-text-color;
+    color: $text-color;
+    width: 46rem;
     p,
     ol,
     ul,
@@ -472,10 +605,12 @@ article.home-post {
     h2,
     h3,
     h4,
+    h5,
+    h6,
     blockquote,
     pre {
         font: inherit;
-        margin-bottom: 24px;
+        margin-bottom: 30px;
         padding: 0 24px;
     }
     code {
@@ -483,6 +618,7 @@ article.home-post {
     }
     p {
         text-align: left;
+        line-height: 1.9375rem;
         strong {
             text-align: inherit;
         }
@@ -494,29 +630,43 @@ article.home-post {
     h5,
     h6 {
         font-family: $font-family-bold;
-        margin-bottom: 12px;
     }
     h1 {
-        font-size: 150%;
+        font-size: 2rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
     }
     h2 {
-        font-size: 125%;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
     }
     h3 {
-        font-size: 112.5%
+        font-size: 1.25rem;
+        margin-top: 2.25rem;
+        margin-bottom: 1.25rem;
     }
     h4 {
-        font-size: 100%;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        margin-top: 2.25rem;
+        margin-bottom: 1rem;
     }
     h5 {
-        font-size: 87.5%;
+        font-size: 1.0625rem;
+        text-transform: uppercase;
+        margin-top: 2.25rem;
+        margin-bottom: 0.75rem;
+        color: $red-color;
     }
     h6 {
-        font-size: 75%;
+        font-size: 1rem;
+        margin-top: 2.25rem;
+        margin-bottom: 1rem;
     }
     blockquote {
         font-size: 125%;
-        line-height: 1.333;
+        line-height: 2.375rem;
         padding: 30px 48px;
         em {
             font-family: $font-family-text-italic;
@@ -533,18 +683,43 @@ article.home-post {
     }
     ol {
         padding: 0 36px 0 24px;
-        li {
-            list-style-type: lower-latin;
+        counter-reset: item;
+        >li {
+            list-style-type: none;
             list-style-position: inside;
             padding-inline-start: 12px;
+            margin-bottom: 1.25rem;
+            counter-increment: item;
+            &:before {
+                display: inline-block;
+                width: 1em;
+                padding-right: 0.5em;
+                font-family: $font-family-bold;
+                text-align: right;
+                content: counter(item) ".";
+                font-variant-numeric: tabular-nums;
+                -moz-font-feature-settings: "tnum";
+                -webkit-font-feature-settings: "tnum";
+                font-feature-settings: "tnum";
+            }
         }
     }
     ul {
         padding: 0 36px 0 24px;
         li {
-            background: url(../images/en-dash.svg) no-repeat 0 9px;
             list-style-type: none;
+            list-style-position: inside;
             padding-inline-start: 12px;
+            margin-bottom: 1rem;
+            counter-increment: item;
+            &:before {
+                display: inline-block;
+                width: 1em;
+                padding-right: 0.5em;
+                font-family: $font-family-bold;
+                text-align: right;
+                content: "–";
+            }
         }
     }
     strong {
@@ -552,6 +727,19 @@ article.home-post {
     }
     em {
         font-family: $font-family-text-italic;
+    }
+    pre {
+        padding: 24px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .post-full-content {
+        background: $dark-site-background-color;
+        color: $dark-text-color;
+        h5 {
+            color: $dark-red-color;
+        }
     }
 }
 
@@ -657,6 +845,7 @@ article.home-post {
 
 .kg-code-card pre {
     margin: 0;
+    padding: 24px auto;
 }
 
 article.post-card-inner {
@@ -667,8 +856,8 @@ article.post-card-inner {
     }
     .post-card-content {
         padding: 21px 24px 25px 24px;
-        background: #fff;
-        box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2), 0 4px 8px rgba($color: #000000, $alpha: 0.15);
+        background: $footer-background;
+        box-shadow: $shadow-1;
         h2.post-card-title {
             font-size: 150%;
             font-family: $font-family-bold;
@@ -687,13 +876,15 @@ article.post-card-inner {
         text-align: right;
         h4 {
             vertical-align: middle;
-            padding-right: 24px;
+            padding-right: 70px;
             svg {
                 margin-left: 8px;
             }
         }
         .post-card-content {
             border-radius: 6px 0 0 6px;
+            padding-right: 70px;
+            padding-left: 50px;
             &:hover {
                 animation: hoveraround-right 3s ease infinite;
             }
@@ -705,13 +896,15 @@ article.post-card-inner {
         text-align: left;
         h4 {
             vertical-align: middle;
-            padding-left: 24px;
+            padding-left: 70px;
             svg {
                 margin-right: 8px;
             }
         }
         .post-card-content {
             border-radius: 0 6px 6px 0;
+            padding-left: 70px;
+            padding-right: 50px;
             &:hover {
                 animation: hoveraround-left 3s ease infinite;
             }
@@ -720,6 +913,19 @@ article.post-card-inner {
     }
     a {
         background-color: inherit;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    article.post-card-inner {
+        .post-card-content {
+            background: $dark-header-background;
+            box-shadow: $dark-shadow-1;
+            time.post-full-meta-date {
+                color: $dark-light-text-color;
+                font-size: 100%;
+            }
+        }
     }
 }
 
@@ -739,9 +945,8 @@ article.post-card-inner {
         margin: 0;
         padding: 27px 24px 26px 24px;
         text-align: left;
-        background-color: $site-background-color;
     }
-    footer {
+    footer.site-footer {
         padding-left: 24px;
         padding-right: 24px;
     }
@@ -752,13 +957,11 @@ article.post-card-inner {
         padding: 28px 24px 32px 24px;
         transition: none;
         &:hover {
-            background-color: $site-background-color;
             border-radius: none;
             box-shadow: none;
             padding: 28px 24px 32px 24px;
         }
         time {
-            color: $light-text-color;
             font-size: 100%;
         }
         h2.home-post-title {
@@ -770,29 +973,49 @@ article.post-card-inner {
             margin-top: 6px;
         }
     }
+    article.post-card-inner {
+        &.next {
+            h4 {
+                padding-right: 24px;
+            }
+        }
+        &.prev {
+            h4 {
+                padding-left: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    @media (prefers-color-scheme: dark) {
+        article.home-post {
+            border-bottom: 1px solid $dark-header-background;
+        }
+    }
 }
 
 @keyframes hoveraround-left {
     0% {
-        padding-left: 24px;
+        padding-left: 70px;
     }
     50% {
-        padding-left: 32px;
+        padding-left: 82px;
     }
     100% {
-        padding-left: 24px;
+        padding-left: 70px;
     }
 }
 
 @keyframes hoveraround-right {
     0% {
-        padding-right: 24px;
+        padding-right: 70px;
     }
     50% {
-        padding-right: 32px;
+        padding-right: 82px;
     }
     100% {
-        padding-right: 24px;
+        padding-right: 70px;
     }
 }
 
@@ -838,6 +1061,16 @@ article.post-card-inner {
             background: $header-background;
         }
     }
+    @media (prefers-color-scheme: dark) {
+        header.site-header {
+            background-color: $dark-header-background;
+        }
+        .post-template {
+            header.site-header {
+                background: $dark-header-background;
+            }
+        }
+    }
     .post-full-image img {
         height: 400px;
     }
@@ -876,8 +1109,10 @@ article.post-card-inner {
             }
             .post-card-content {
                 border-radius: 6px 0 0 6px;
+                padding-right: 24px;
+                padding-left: 24px;
                 &:hover {
-                    animation: hoveraround-right 3s ease infinite;
+                    animation: none;
                 }
             }
             margin-bottom: 50px;
@@ -894,14 +1129,41 @@ article.post-card-inner {
             }
             .post-card-content {
                 border-radius: 0 6px 6px 0;
+                padding-right: 24px;
+                padding-left: 24px;
                 &:hover {
-                    animation: hoveraround-left 3s ease infinite;
+                    animation: none;
                 }
             }
             margin-bottom: 38px;
         }
         a {
             background-color: inherit;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        article.post-card-inner {
+            &.prev,
+            &.next {
+                h4 {
+                    svg {
+                        fill: $dark-text-color;
+                        >path {
+                            fill: $dark-text-color;
+                        }
+                    }
+                }
+            }
+            .post-card-content {
+                background: $dark-header-background;
+                box-shadow: $dark-shadow-1;
+                h2.post-card-title {
+                    font-family: $font-family-bold;
+                }
+                time.post-full-meta-date {
+                    color: $dark-light-text-color;
+                }
+            }
         }
     }
     #main {
@@ -913,22 +1175,103 @@ article.post-card-inner {
             margin-top: 50px;
             margin-bottom: 50px;
             header.post-full-header {
+                width: auto;
                 padding: 0 24px;
-                background-color: $site-background-color;
             }
+        }
+    }
+    .post-full-content {
+        position: relative;
+        margin: 0 auto;
+        min-height: 230px;
+        font-size: 100%;
+        line-height: 1.4;
+        width: auto;
+        p,
+        ol,
+        ul,
+        h1,
+        h2,
+        h3,
+        h4,
+        blockquote,
+        pre {
+            font: inherit;
+            margin-bottom: 24px;
+            padding: 0 24px;
+        }
+        code {
+            font-family: $font-family-code;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $font-family-bold;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.125rem;
+            line-height: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1.125rem;
+            line-height: 1.5rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1.125rem;
+            line-height: 1.5rem;
+        }
+        h4 {
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            margin-top: 2.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h5 {
+            font-size: 1.0625rem;
+            text-transform: uppercase;
+            margin-top: 1.75rem;
+            margin-bottom: 0.9375rem;
+            line-height: 1.25rem;
+            color: $red-color;
+        }
+        @media (prefers-color-scheme: dark) {
+            h5 {
+                color: $dark-red-color;
+            }
+        }
+        h6 {
+            font-size: 1rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            text-align: left;
+            strong {
+                text-align: inherit;
+            }
+        }
+        blockquote {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            padding: 30px 48px;
+        }
+        ol {
+            padding: 0 36px 0 24px;
+        }
+        ul {
+            padding: 0 36px 0 24px;
         }
     }
     .about {
         width: auto;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: $background-color-dark;
-        color: white;
-    }
-    a {
-        color: white;
     }
 }
