@@ -409,11 +409,12 @@ article.home-post {
   margin-top: 50px;
   margin-bottom: 50px; }
   #site-main article header.post-full-header {
-    padding: 0;
     width: 46rem;
     margin: 0 auto;
     background-color: #F2F2F2;
-    margin-bottom: 28px; }
+    margin-bottom: 28px;
+    padding-left: 48px;
+    padding-right: 0; }
 
 .post-full-meta {
   display: inline-block;
@@ -460,6 +461,10 @@ article.home-post {
   background: #F2F2F2;
   color: #1A1A1A;
   width: 46rem; }
+  .post-full-content a {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #999999;
+            text-decoration-color: #999999; }
   .post-full-content p,
   .post-full-content ol,
   .post-full-content ul,

@@ -556,11 +556,12 @@ article.home-post {
         margin-top: 50px;
         margin-bottom: 50px;
         header.post-full-header {
-            padding: 0;
             width: 46rem;
             margin: 0 auto;
             background-color: $site-background-color;
             margin-bottom: 28px;
+            padding-left: 48px;
+            padding-right: 0;
         }
     }
 }
@@ -622,6 +623,15 @@ article.home-post {
     background: $site-background-color;
     color: $text-color;
     width: 46rem;
+    a {
+        text-decoration: underline;
+        text-decoration-color: $light-text-color;
+    }
+    @media (prefers-color-scheme: dark) {
+        a {
+            text-decoration-color: $ldark-light-text-color;
+        }
+    }
     p,
     ol,
     ul,
