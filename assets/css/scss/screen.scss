@@ -1116,6 +1116,10 @@ article.post-card-inner {
 }
 
 @media screen and (max-width: 800px) {
+    #posts {
+        margin: 60px auto;
+        width: 100%;
+    }
     .site-wrapper {
         margin: 0;
     }

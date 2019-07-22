@@ -855,6 +855,9 @@ article.post-card-inner {
     padding-right: 70px; } }
 
 @media screen and (max-width: 800px) {
+  #posts {
+    margin: 60px auto;
+    width: 100%; }
   .site-wrapper {
     margin: 0; }
   header.site-header {
