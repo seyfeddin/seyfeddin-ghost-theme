@@ -418,7 +418,7 @@ article.home-post {
     margin: 0 auto;
     background-color: #F2F2F2;
     margin-bottom: 28px;
-    padding-left: 48px;
+    padding-left: 0;
     padding-right: 0; }
 
 .post-full-meta {
