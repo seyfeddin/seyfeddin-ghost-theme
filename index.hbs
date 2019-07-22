@@ -10,7 +10,7 @@ into the {body} of the default.hbs template }}
         <option value="/writing/">All Categories</option>
         {{#get "tags" limit="all"}}
           {{#foreach tags as |post_tag|}}
-            <option value="/tag/{{post_tag.slug}}">{{post_tag.name}}</option>
+            <option value="/tag/{{post_tag.slug}}" class="{{post_tag.slug}}">{{post_tag.name}}</option>
           {{/foreach}}
         {{/get}}
       </select>
@@ -27,3 +27,31 @@ into the {body} of the default.hbs template }}
     {{/foreach}}
     {{!-- <a href="#" class="all-posts">See all posts</a> --}}
   </section>
+
+  {{#contentFor "scripts"}}
+<script>
+
+function selectItemByValue(elmnt, value){
+  console.log(elmnt);
+  for(var i=0; i < elmnt.options.length; i++)
+  {
+    console.log(elmnt.options[i].value)
+    if(elmnt.options[i].value === value) {
+      elmnt.selectedIndex = i;
+      break;
+    }
+  }
+}
+
+$(document).ready(function () {
+  console.log(window.location.pathname);
+  var pathName = window.location.pathname;
+  if (pathName.endsWith('/')) {
+        selectItemByValue(document.getElementById('post-category'), pathName.substring(0, pathName.length - 1))
+  } else {
+    selectItemByValue(document.getElementById('post-category'), pathName)
+  }
+  
+});
+</script>
+  {{/contentFor}}
