@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/regular.min.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    {{#is "post"}}
+        <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+    {{/is}}
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}

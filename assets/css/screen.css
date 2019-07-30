@@ -491,7 +491,8 @@ article.home-post {
     margin-left: auto;
     margin-right: auto; }
   .post-full-content code {
-    font-family: "SFMono-Regular", monospace; }
+    font-family: "SFMono-Regular", monospace;
+    background-color: #1A1A1A; }
   .post-full-content p {
     text-align: left;
     line-height: 1.9375rem; }
