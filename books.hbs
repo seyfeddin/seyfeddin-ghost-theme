@@ -1,0 +1,24 @@
+{{!< default}}
+{{! The tag above means: insert everything in this file
+into the {body} of the default.hbs template }}
+
+{{> header }}
+
+<section id="books">
+    {{#foreach posts}}
+      <article class="books-book">
+          <figure class="book-cover">
+              <div class="book-cover-image">
+                <img src="{{img_url feature_image size="small" absolute="true"}}" />
+              </div>
+          </figure>
+          <h2 class="book-title">
+            {{title}}
+          </h2>
+          <h3>{{excerpt}}</h3>
+          <div class="book-content">
+          {{content}}
+          </div>
+      </article>
+    {{/foreach}}
+  </section>
