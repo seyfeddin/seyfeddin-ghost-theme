@@ -749,6 +749,7 @@ article.home-post {
             padding-inline-start: 12px;
             margin-bottom: 1.25rem;
             counter-increment: item;
+            line-height: 1.9375rem;
             &:before {
                 display: inline-block;
                 width: 1em;
@@ -771,6 +772,7 @@ article.home-post {
             padding-inline-start: 12px;
             margin-bottom: 1rem;
             counter-increment: item;
+            line-height: 1.9375rem;
             &:before {
                 display: inline-block;
                 width: 1em;
