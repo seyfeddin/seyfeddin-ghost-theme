@@ -865,11 +865,8 @@ article.post-card-inner {
   .site-wrapper {
     margin: 0; }
   header.site-header {
-    position: -webkit-sticky;
-    position: sticky;
+    position: relative;
     display: block;
-    top: 0;
-    right: 0;
     margin: 0;
     padding: 27px 24px 26px 24px;
     text-align: left;
