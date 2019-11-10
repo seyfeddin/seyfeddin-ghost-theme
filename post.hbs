@@ -73,13 +73,17 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
         <div class="read-next-feed">
             {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#next_post}}
-                {{> "post-card-inner-next"}}
+            {{#next_post in="primary_tag"}}
+                {{#has tag="#writing"}}
+                    {{> "post-card-inner-next"}}
+                {{/has}}
             {{/next_post}}
 
             {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#prev_post}}
-                {{> "post-card-inner-prev"}}
+            {{#prev_post in="primary_tag"}}
+                {{#has tag="#writing"}}
+                    {{> "post-card-inner-prev"}}
+                {{/has}}
             {{/prev_post}}
 
         </div>
