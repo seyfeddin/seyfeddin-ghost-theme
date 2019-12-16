@@ -183,6 +183,12 @@ $shadow-1: 0 1px 2px rgba($color: #000000, $alpha: 0.2),
 $dark-shadow-1: inset 0 1px 1px rgba($color: #FFF, $alpha: 0.1),
 0 1px 2px rgba($color: #000000, $alpha: 0.2),
 0 4px 8px rgba($color: #000000, $alpha: 0.15);
+$inner-shadow-1: inset 0 1px 2px rgba($color: #000000, $alpha: 0.2),
+inset 0 -1px 2px rgba($color: #000000, $alpha: 0.1),
+inset 0 4px 8px rgba($color: #000000, $alpha: 0.15);
+$dark-inner-shadow-1: inset 0 -1px 1px rgba($color: #FFF, $alpha: 0.2),
+inset 0 1px 12x rgba($color: #000, $alpha: 0.05),
+inset 0 4px 8px rgba($color: #000000, $alpha: 0.15);
 
 /* Seyfeddin SCSS */
 
@@ -912,6 +918,16 @@ article.home-post {
     }
 }
 
+section.post-full-comments {
+    width: 46rem;
+    margin: 24px auto;
+    background-color: $header-background;
+    margin-bottom: 12px;
+    padding-top: 24px;
+    border-radius: 4px;
+    box-shadow: $inner-shadow-1;
+}
+
 @media (prefers-color-scheme: dark) {
     .post-full-content {
         background: $dark-site-background-color;
@@ -919,6 +935,11 @@ article.home-post {
         h5 {
             color: $dark-red-color;
         }
+    }
+    section.post-full-comments {
+        background-color: $dark-header-background;
+        color: $dark-text-color;
+        box-shadow: $dark-inner-shadow-1;
     }
 }
 
