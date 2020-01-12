@@ -928,6 +928,13 @@ section.post-full-comments {
     box-shadow: $inner-shadow-1;
 }
 
+@media (max-width: 800px) {
+    section.post-full-comments {
+        width: auto;
+        margin: 0 12px;   
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     .post-full-content {
         background: $dark-site-background-color;
