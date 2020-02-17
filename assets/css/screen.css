@@ -193,30 +193,6 @@ svg {
   font-style: italic; }
 
 @font-face {
-  font-family: 'Calluna-BoldIt';
-  src: url(../fonts/Calluna-BoldIt.eot);
-  src: url(../fonts/Calluna-BoldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-BoldIt.woff) format("woff"), url(../fonts/Calluna-BoldIt.ttf) format("truetype"), url(../fonts/Calluna-BoldIt.svg#Calluna-BoldIt) format("svg");
-  font-weight: bold;
-  font-style: normal;
-  font-display: auto; }
-
-@font-face {
-  font-family: 'Calluna-Bold';
-  src: url(../fonts/Calluna-Bold.eot);
-  src: url(../fonts/Calluna-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-Bold.woff) format("woff"), url(../fonts/Calluna-Bold.ttf) format("truetype"), url(../fonts/Calluna-Bold.svg#Calluna-Bold) format("svg");
-  font-weight: bold;
-  font-style: normal;
-  font-display: auto; }
-
-@font-face {
-  font-family: 'Calluna-It';
-  src: url(../fonts/Calluna-It.eot);
-  src: url(../fonts/Calluna-It.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-It.woff) format("woff"), url(../fonts/Calluna-It.ttf) format("truetype"), url(../fonts/Calluna-It.svg#Calluna-It) format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: auto; }
-
-@font-face {
   font-family: 'SFMono-Regular';
   src: url(../fonts/SFMono-Regular.eot);
   src: url(../fonts/SFMono-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/SFMono-Regular.woff2) format("woff2"), url(../fonts/SFMono-Regular.woff) format("woff"), url(../fonts/SFMono-Regular.ttf) format("truetype"), url(../fonts/SFMono-Regular.svg#SFMono-Regular) format("svg");
@@ -536,7 +512,7 @@ article.home-post {
   margin-bottom: 50px; }
   #site-main article header.post-full-header {
     width: 48rem;
-    margin: 0 auto;
+    margin: 5rem auto 2.5rem auto;
     background-color: #F2F2F2;
     margin-bottom: 28px;
     padding-left: 0;
@@ -552,10 +528,10 @@ article.home-post {
     font-size: 1rem; }
 
 .post-full-title {
-  font-size: 1.875rem;
-  font-family: "GraphikCompact-Semibold", --apple-system, Helvetica, Arial, sans-serif;
-  line-height: 1.1333333333;
-  margin: 0 auto; }
+  font-size: 2rem;
+  font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif;
+  line-height: 2.5rem;
+  margin: 0 auto 4rem auto; }
 
 .post-full-image {
   margin: 24px 0;
@@ -583,7 +559,7 @@ article.home-post {
   min-height: 230px;
   font-family: "Source Serif", Georgia, serif;
   font-size: 1.375rem;
-  line-height: 1.409rem;
+  line-height: 2.5rem;
   background: #F2F2F2;
   color: rgba(0, 0, 0, 0.77); }
   .post-full-content a {
@@ -606,11 +582,9 @@ article.home-post {
   .post-full-content blockquote,
   .post-full-content pre {
     font: inherit;
-    margin-bottom: 30px;
+    margin: 1rem auto 1.75rem auto;
     padding: 0 24px;
-    width: 48rem;
-    margin-left: auto;
-    margin-right: auto; }
+    width: 48rem; }
   .post-full-content code {
     font-family: "SFMono-Regular", monospace;
     background-color: rgba(0, 0, 0, 0.77); }
@@ -625,39 +599,36 @@ article.home-post {
   .post-full-content h4,
   .post-full-content h5,
   .post-full-content h6 {
-    font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
+    font-family: "GraphikCompact-Semibold", --apple-system, Helvetica, Arial, sans-serif;
+    margin-bottom: 0; }
   .post-full-content h1 {
     font-size: 2rem;
-    margin-top: 3.5rem;
-    margin-bottom: 2rem; }
+    margin-top: 5rem; }
   .post-full-content h2 {
     font-size: 1.5rem;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem; }
+    margin-top: 2rem; }
   .post-full-content h3 {
     font-size: 1.25rem;
-    margin-top: 2.25rem;
-    margin-bottom: 1.25rem; }
+    margin-top: 1rem;
+    font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
   .post-full-content h4 {
     font-size: 1.125rem;
     text-transform: uppercase;
-    margin-top: 2.25rem;
-    margin-bottom: 1rem; }
+    margin-top: 1rem; }
   .post-full-content h5 {
     font-size: 1.0625rem;
     text-transform: uppercase;
-    margin-top: 2.25rem;
-    margin-bottom: 0.75rem;
+    margin-top: 1rem;
     color: #EF0000; }
   .post-full-content h6 {
     font-size: 1rem;
-    margin-top: 2.25rem; }
+    margin-top: 1rem; }
   .post-full-content hr {
     background-color: #BFBFBF;
-    max-width: 48rem;
+    max-width: 16rem;
     height: 1px;
     border: none;
-    margin: 2rem auto 2rem; }
+    margin: 2.5rem auto 3rem auto; }
   .post-full-content blockquote {
     font-size: 125%;
     line-height: 2.375rem;
@@ -748,6 +719,11 @@ section.post-full-comments {
   line-height: 1.425;
   letter-spacing: -0.3px; }
 
+@media screen and (max-width: 800px) {
+  .post-template .post-content > p:first-child {
+    letter-spacing: 0;
+    line-height: 1.5; } }
+
 .post-full-content .kg-image {
   max-width: 48rem;
   margin-left: auto;
@@ -778,9 +754,9 @@ section.post-full-comments {
 
 .post-full-content .kg-card-hascaption figcaption {
   margin: 1rem 0 0;
+  padding: 0 1rem 1rem 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  padding-bottom: 1rem;
   text-align: center;
   font-family: "Source Serif", Georgia, serif;
   font-style: italic;
@@ -795,7 +771,7 @@ section.post-full-comments {
     color: #AAAAAA; } }
 
 .kg-width-full figcaption {
-  padding: 0 1.5em; }
+  padding: 0 2rem; }
 
 .kg-embed-card {
   display: flex;
@@ -1100,7 +1076,8 @@ article.post-card-inner {
     margin-bottom: 50px; }
     #site-main article header.post-full-header {
       width: auto;
-      padding: 0 1rem; }
+      padding: 0 1rem;
+      margin: 20rem auto 17rem auto; }
   .post-full-content {
     position: relative;
     margin: 0 auto;
@@ -1186,7 +1163,7 @@ article.post-card-inner {
       padding: 0 36px 0 1rem;
       font-size: 118.75%; }
     .post-full-content hr {
-      max-width: 70vw; }
+      max-width: 16rem; }
   .about {
     width: auto; }
   .kg-card.kg-image-card {
