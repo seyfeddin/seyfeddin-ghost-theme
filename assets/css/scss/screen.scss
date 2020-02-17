@@ -137,14 +137,14 @@ table {
 $light-text-color: #999999;
 $lighter-gray-color: #BFBFBF;
 $lightest-gray-color: #E6E6E6;
-$text-color: #1A1A1A;
+$text-color: rgba(0,0,0,0.77);
 $site-background-color: #F2F2F2;
 $header-background: #F9F9F9;
 $footer-background: #FFFFFF;
 $background-color-dark: #191919;
 $red-color: #EF0000;
 // Dark Mode Colors
-$dark-light-text-color: #B6B6B6;
+$dark-light-text-color: #AAAAAA;
 $dark-lighter-gray-color: #939393;
 $dark-lightest-gray-color: #757575;
 $dark-text-color: #F2F2F2;
@@ -159,23 +159,19 @@ $font-family: "GraphikCompact-Regular",
 Helvetica,
 Arial,
 sans-serif;
-$font-family-bold: "GraphikCompact-Medium",
+$font-family-medium: "GraphikCompact-Medium",
+--apple-system,
+Helvetica,
+Arial,
+sans-serif;
+$font-family-bold: "GraphikCompact-Semibold",
 --apple-system,
 Helvetica,
 Arial,
 sans-serif;
 $font-family-code: "SFMono-Regular",
 monospace;
-$font-family-text: "Calluna-Regular",
-Georgia,
-serif;
-$font-family-text-bold: "Calluna-Bold",
-Georgia,
-serif;
-$font-family-text-bold-italic: "Calluna-BoldIt",
-Georgia,
-serif;
-$font-family-text-italic: "Calluna-It",
+$font-family-text: "Source Serif",
 Georgia,
 serif;
 $shadow-1: 0 1px 2px rgba($color: #000000, $alpha: 0.2),
@@ -225,6 +221,52 @@ svg {
 }
 
 @font-face {
+    font-family: 'GraphikCompact-Bold';
+    src: url(../fonts/GraphikCompact-Bold.eot);
+    src: url(../fonts/GraphikCompact-Bold.eot?#iefix) format('embedded-opentype'), url(../fonts/GraphikCompact-Bold.woff2) format('woff2'), url(../fonts/GraphikCompact-Bold.woff) format('woff'), url(../fonts/GraphikCompact-Bold.ttf) format('truetype'), url(../fonts/GraphikCompact-Bold.svg#GraphikCompact-Regular) format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'GraphikCompact-Semibold';
+    src: url(../fonts/GraphikCompact-Semibold.eot);
+    src: url(../fonts/GraphikCompact-Semibold.eot?#iefix) format('embedded-opentype'), url(../fonts/GraphikCompact-Semibold.woff2) format('woff2'), url(../fonts/GraphikCompact-Semibold.woff) format('woff'), url(../fonts/GraphikCompact-Semibold.ttf) format('truetype'), url(../fonts/GraphikCompact-Semibold.svg#GraphikCompact-Regular) format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: "Source Serif";
+    src: url(../fonts/SourceSerifPro-Regular.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-Regular.otf.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Source Serif";
+    src: url(../fonts/SourceSerifPro-Bold.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-Bold.otf.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Source Serif";
+    src: url(../fonts/SourceSerifPro-It.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-It.otf.woff) format("woff");
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Source Serif";
+    src: url(../fonts/SourceSerifPro-BoldIt.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-BoldIt.otf.woff) format("woff");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+@font-face {
     font-family: 'Calluna-BoldIt';
     src: url(../fonts/Calluna-BoldIt.eot);
     src: url(../fonts/Calluna-BoldIt.eot?#iefix) format('embedded-opentype'), url(../fonts/Calluna-BoldIt.woff) format('woff'), url(../fonts/Calluna-BoldIt.ttf) format('truetype'), url(../fonts/Calluna-BoldIt.svg#Calluna-BoldIt) format('svg');
@@ -246,15 +288,6 @@ svg {
     font-family: 'Calluna-It';
     src: url(../fonts/Calluna-It.eot);
     src: url(../fonts/Calluna-It.eot?#iefix) format('embedded-opentype'), url(../fonts/Calluna-It.woff) format('woff'), url(../fonts/Calluna-It.ttf) format('truetype'), url(../fonts/Calluna-It.svg#Calluna-It) format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-}
-
-@font-face {
-    font-family: 'Calluna-Regular';
-    src: url(../fonts/Calluna-Regular.eot);
-    src: url(../fonts/Calluna-Regular.eot?#iefix) format('embedded-opentype'), url(../fonts/Calluna-Regular.woff) format('woff'), url(../fonts/Calluna-Regular.ttf) format('truetype'), url(../fonts/Calluna-Regular.svg#Calluna-Regular) format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: auto;
@@ -494,10 +527,10 @@ select {
 
 #posts {
     margin: 60px auto;
-    width: 46rem;
+    width: 48rem;
     h1 {
         font-size: 187.5%;
-        font-family: $font-family-bold;
+        font-family: $font-family-medium;
         padding: 0 24px;
         margin-bottom: 24px;
         em {
@@ -661,7 +694,7 @@ article.home-post {
     }
     h2.home-post-title {
         font-size: 150%;
-        font-family: $font-family-bold;
+        font-family: $font-family-medium;
         font-weight: bold;
         line-height: 1.3333;
         text-decoration: none;
@@ -686,7 +719,7 @@ article.home-post {
         margin-top: 50px;
         margin-bottom: 50px;
         header.post-full-header {
-            width: 46rem;
+            width: 48rem;
             margin: 0 auto;
             background-color: $site-background-color;
             margin-bottom: 28px;
@@ -748,8 +781,8 @@ article.home-post {
     margin: 0 auto;
     min-height: 230px;
     font-family: $font-family-text;
-    font-size: 1.3125rem;
-    line-height: 1.875rem;
+    font-size: 1.375rem;
+    line-height: 1.409rem;
     background: $site-background-color;
     color: $text-color;
     a {
@@ -775,7 +808,7 @@ article.home-post {
         font: inherit;
         margin-bottom: 30px;
         padding: 0 24px;
-        width: 46rem;
+        width: 48rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -785,7 +818,7 @@ article.home-post {
     }
     p {
         text-align: left;
-        line-height: 1.9375rem;
+        line-height: 2rem;
         strong {
             text-align: inherit;
         }
@@ -796,7 +829,7 @@ article.home-post {
     h4,
     h5,
     h6 {
-        font-family: $font-family-bold;
+        font-family: $font-family-medium;
     }
     h1 {
         font-size: 2rem;
@@ -829,12 +862,11 @@ article.home-post {
     h6 {
         font-size: 1rem;
         margin-top: 2.25rem;
-        margin-bottom: 1rem;
     }
     hr {
         background-color: $lighter-gray-color;
-        max-width: 46rem;
-        height: 2px;
+        max-width: 48rem;
+        height: 1px;
         border: none;
         margin: 2rem auto 2rem;
     }
@@ -852,9 +884,12 @@ article.home-post {
             padding: 0;
         }
         em {
-            font-family: $font-family-text-italic;
+            font-family: $font-family-text;
+            font-style: italic;
             strong {
-                font-family: $font-family-text-bold-italic;
+                font-family: $font-family-text;
+                font-weight: bold;
+                font-style: italic;
             }
         }
         &:before {
@@ -867,51 +902,39 @@ article.home-post {
     ol {
         padding: 0 36px 0 24px;
         counter-reset: item;
+        margin: 0 24px 0 40px;
+        width: 48rem;
         >li {
-            list-style-type: none;
-            list-style-position: inside;
-            padding-inline-start: 12px;
-            margin-bottom: 1.25rem;
-            counter-increment: item;
-            line-height: 1.9375rem;
-            &:before {
-                display: inline-block;
-                width: 1em;
-                padding-right: 0.5em;
-                font-family: $font-family-bold;
-                text-align: right;
-                content: counter(item) ".";
-                font-variant-numeric: tabular-nums;
-                -moz-font-feature-settings: "tnum";
-                -webkit-font-feature-settings: "tnum";
-                font-feature-settings: "tnum";
-            }
+            list-style-type: decimal;
+            list-style-position: outside;
+            line-height: 1.5;
+            margin-bottom: 0.2rem;
+            font-variant-numeric: lining-nums;
         }
     }
     ul {
-        padding: 0 36px 0 24px;
+        padding: 0 36px 0 128px;
+        margin: 0 auto 24px auto;
+        @media screen and (max-width: 800px)  {
+            padding: 0 36px 0 24px;
+            margin: 0 24px 0 40px;
+        }
+        width: 48rem;
         li {
-            list-style-type: none;
-            list-style-position: inside;
-            padding-inline-start: 12px;
-            margin-bottom: 1rem;
-            counter-increment: item;
-            line-height: 1.9375rem;
-            &:before {
-                display: inline-block;
-                width: 1em;
-                padding-right: 0.5em;
-                font-family: $font-family-bold;
-                text-align: right;
-                content: "–";
-            }
+            list-style-type: disc;
+            list-style-position: outside;
+            margin-bottom: 0.2rem;
+            line-height: 1.5;
+            font-variant-numeric: lining-nums;
         }
     }
     strong {
-        font-family: $font-family-text-bold;
+        font-family: $font-family-text;
+        font-weight: bold;
     }
     em {
-        font-family: $font-family-text-italic;
+        font-family: $font-family-text;
+        font-style: italic;
     }
     pre {
         padding: 24px;
@@ -919,7 +942,7 @@ article.home-post {
 }
 
 section.post-full-comments {
-    width: 46rem;
+    width: 48rem;
     margin: 24px auto;
     background-color: $header-background;
     margin-bottom: 12px;
@@ -955,18 +978,19 @@ section.post-full-comments {
 }
 
 .post-template .post-content>p:first-child {
-    font-size: 1.25em;
-    line-height: 1.5em;
+    font-size: 1.1875em;
+    line-height: 1.425;
+    letter-spacing: -0.3px;
 }
 
 .post-full-content .kg-image {
-    max-width: 46rem;
+    max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .fluid-width-video-container {
-    max-width: 46rem;
+    max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1004,7 +1028,8 @@ section.post-full-comments {
             line-height: 1.5rem;
             padding-bottom: 1rem;
             text-align: center;
-            font-family: $font-family-text-italic;
+            font-family: $font-family-text;
+            font-style: italic;
             color: $light-text-color;
         }
     }
@@ -1084,7 +1109,7 @@ section.post-full-comments {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    max-width: 46rem;
+    max-width: 48rem;
 }
 
 
@@ -1111,7 +1136,7 @@ article.post-card-inner {
         box-shadow: $shadow-1;
         h2.post-card-title {
             font-size: 150%;
-            font-family: $font-family-bold;
+            font-family: $font-family-medium;
             font-weight: bold;
             line-height: 1.3333;
             text-decoration: none;
@@ -1218,7 +1243,7 @@ article.post-card-inner {
         }
         h2.home-post-title {
             font-size: 150%;
-            font-family: $font-family-bold;
+            font-family: $font-family-medium;
             font-weight: bold;
             line-height: 1.3333;
             text-decoration: underline;
@@ -1283,7 +1308,7 @@ article.post-card-inner {
         position: relative;
         display: block;
         margin: 0;
-        padding: 27px 24px 26px 24px;
+        padding: 27px 1rem 26px 1rem;
         text-align: left;
         background-color: $header-background;
         animation: none;
@@ -1335,12 +1360,12 @@ article.post-card-inner {
             margin-bottom: 13px;
         }
         .post-card-content {
-            padding: 21px 24px 25px 24px;
+            padding: 21px 1rem 25px 1rem;
             background: #fff;
             box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2), 0 4px 8px rgba($color: #000000, $alpha: 0.15);
             h2.post-card-title {
                 font-size: 150%;
-                font-family: $font-family-bold;
+                font-family: $font-family-medium;
                 font-weight: bold;
                 line-height: 1.3333;
                 text-decoration: none;
@@ -1405,7 +1430,7 @@ article.post-card-inner {
             margin-bottom: 50px;
             header.post-full-header {
                 width: auto;
-                padding: 0 24px;
+                padding: 0 1rem;
             }
         }
     }
@@ -1413,8 +1438,9 @@ article.post-card-inner {
         position: relative;
         margin: 0 auto;
         min-height: 230px;
-        font-size: 112.5%;
-        line-height: 1.4;
+        font-size: 100%;
+        line-height: 1.105;
+        font-variant-numeric: lining-nums;
         width: auto;
         p,
         ol,
@@ -1427,7 +1453,7 @@ article.post-card-inner {
         pre {
             font: inherit;
             margin-bottom: 24px;
-            padding: 0 24px;
+            padding: 0 1rem;
             width: auto;
         }
         code {
@@ -1439,13 +1465,12 @@ article.post-card-inner {
         h4,
         h5,
         h6 {
-            font-family: $font-family-bold;
+            font-family: $font-family-medium;
         }
         h1 {
             font-size: 2rem;
-            margin-top: 3rem;
-            margin-bottom: 1.125rem;
-            line-height: 2rem;
+            margin-top: 2rem;
+            line-height: 1.5rem;
         }
         h2 {
             font-size: 1.5rem;
@@ -1484,7 +1509,11 @@ article.post-card-inner {
             margin-bottom: 1rem;
         }
         p {
+            font-size: 118.75%;
+            line-height: 1.5;
             text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
             strong {
                 text-align: inherit;
             }
@@ -1492,13 +1521,15 @@ article.post-card-inner {
         blockquote {
             font-size: 1.25rem;
             line-height: 1.75rem;
-            padding: 30px 24px;
+            padding: 30px 1rem;
         }
         ol {
-            padding: 0 36px 0 24px;
+            padding: 0 36px 0 1rem;
+            font-size: 118.75%;
         }
         ul {
-            padding: 0 36px 0 24px;
+            padding: 0 36px 0 1rem;
+            font-size: 118.75%;
         }
         hr {
             max-width: 70vw;
@@ -1517,6 +1548,9 @@ article.post-card-inner {
         .kg-image {
             max-width: 100vw;
         }
+    }
+    article.post-full > header.post-full-header {
+        margin: 4rem auto 3rem auto !important;
     }
 }
 
@@ -1537,7 +1571,7 @@ article.post-card-inner {
             background: $dark-header-background;
             box-shadow: $dark-shadow-1;
             h2.post-card-title {
-                font-family: $font-family-bold;
+                font-family: $font-family-medium;
             }
             time.post-full-meta-date {
                 color: $dark-light-text-color;

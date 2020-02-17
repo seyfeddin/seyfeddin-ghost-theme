@@ -153,6 +153,46 @@ svg {
   font-display: auto; }
 
 @font-face {
+  font-family: 'GraphikCompact-Bold';
+  src: url(../fonts/GraphikCompact-Bold.eot);
+  src: url(../fonts/GraphikCompact-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/GraphikCompact-Bold.woff2) format("woff2"), url(../fonts/GraphikCompact-Bold.woff) format("woff"), url(../fonts/GraphikCompact-Bold.ttf) format("truetype"), url(../fonts/GraphikCompact-Bold.svg#GraphikCompact-Regular) format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto; }
+
+@font-face {
+  font-family: 'GraphikCompact-Semibold';
+  src: url(../fonts/GraphikCompact-Semibold.eot);
+  src: url(../fonts/GraphikCompact-Semibold.eot?#iefix) format("embedded-opentype"), url(../fonts/GraphikCompact-Semibold.woff2) format("woff2"), url(../fonts/GraphikCompact-Semibold.woff) format("woff"), url(../fonts/GraphikCompact-Semibold.ttf) format("truetype"), url(../fonts/GraphikCompact-Semibold.svg#GraphikCompact-Regular) format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto; }
+
+@font-face {
+  font-family: "Source Serif";
+  src: url(../fonts/SourceSerifPro-Regular.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-Regular.otf.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Serif";
+  src: url(../fonts/SourceSerifPro-Bold.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-Bold.otf.woff) format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Source Serif";
+  src: url(../fonts/SourceSerifPro-It.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-It.otf.woff) format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Source Serif";
+  src: url(../fonts/SourceSerifPro-BoldIt.otf.woff2) format("woff2"), url(../fonts/SourceSerifPro-BoldIt.otf.woff) format("woff");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
   font-family: 'Calluna-BoldIt';
   src: url(../fonts/Calluna-BoldIt.eot);
   src: url(../fonts/Calluna-BoldIt.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-BoldIt.woff) format("woff"), url(../fonts/Calluna-BoldIt.ttf) format("truetype"), url(../fonts/Calluna-BoldIt.svg#Calluna-BoldIt) format("svg");
@@ -172,14 +212,6 @@ svg {
   font-family: 'Calluna-It';
   src: url(../fonts/Calluna-It.eot);
   src: url(../fonts/Calluna-It.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-It.woff) format("woff"), url(../fonts/Calluna-It.ttf) format("truetype"), url(../fonts/Calluna-It.svg#Calluna-It) format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: auto; }
-
-@font-face {
-  font-family: 'Calluna-Regular';
-  src: url(../fonts/Calluna-Regular.eot);
-  src: url(../fonts/Calluna-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/Calluna-Regular.woff) format("woff"), url(../fonts/Calluna-Regular.ttf) format("truetype"), url(../fonts/Calluna-Regular.svg#Calluna-Regular) format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: auto; }
@@ -209,7 +241,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "GraphikCompact-Regular", --apple-system, Helvetica, Arial, sans-serif;
-  color: #1A1A1A; }
+  color: rgba(0, 0, 0, 0.77); }
 
 html,
 body {
@@ -220,7 +252,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #1A1A1A;
+  color: rgba(0, 0, 0, 0.77);
   transition: color .2s ease; }
   a.disabled {
     color: #999999;
@@ -235,9 +267,9 @@ a {
   a {
     color: #F2F2F2; }
     a:hover {
-      color: #B6B6B6; }
+      color: #AAAAAA; }
   .disabled {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 .social-link li {
   display: block;
@@ -295,7 +327,7 @@ header.site-header {
 
 @media (prefers-color-scheme: dark) {
   header.site-header h2.title {
-    color: #B6B6B6; }
+    color: #AAAAAA; }
   nav ul.nav-current a {
     -webkit-text-decoration-color: #999999;
             text-decoration-color: #999999; } }
@@ -346,9 +378,9 @@ footer.site-footer {
 
 @media (prefers-color-scheme: dark) {
   .about span.disabled {
-    color: #B6B6B6; }
+    color: #AAAAAA; }
   .about span.description {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 select {
   -webkit-appearance: none;
@@ -361,7 +393,7 @@ select {
 
 #posts {
   margin: 60px auto;
-  width: 46rem; }
+  width: 48rem; }
   #posts h1 {
     font-size: 187.5%;
     font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif;
@@ -383,7 +415,7 @@ select {
   #posts h1 em {
     color: #939393; }
   #posts h1 select {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 #books {
   margin: 160px 70px 120px 70px;
@@ -423,7 +455,7 @@ select {
   #books article.books-book h2,
   #books article.books-book h3 {
     font-size: 1.125rem;
-    color: #1A1A1A;
+    color: rgba(0, 0, 0, 0.77);
     display: inline-block;
     width: 100%; }
   #books article.books-book h2 {
@@ -447,7 +479,7 @@ select {
   #books article.books-book h3 {
     color: #F2F2F2; }
   #books article.books-book h3 {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 @media screen and (max-width: 800px) {
   #books {
@@ -497,13 +529,13 @@ article.home-post {
     background-color: #353535;
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15); }
   article.home-post time {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 #site-main article {
   margin-top: 50px;
   margin-bottom: 50px; }
   #site-main article header.post-full-header {
-    width: 46rem;
+    width: 48rem;
     margin: 0 auto;
     background-color: #F2F2F2;
     margin-bottom: 28px;
@@ -521,7 +553,7 @@ article.home-post {
 
 .post-full-title {
   font-size: 1.875rem;
-  font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif;
+  font-family: "GraphikCompact-Semibold", --apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.1333333333;
   margin: 0 auto; }
 
@@ -541,7 +573,7 @@ article.home-post {
   #site-main article header.post-full-header {
     background-color: #191919; }
   .post-full-meta {
-    color: #B6B6B6; }
+    color: #AAAAAA; }
   .post-full-image {
     background: #191919 center center; } }
 
@@ -549,19 +581,19 @@ article.home-post {
   position: relative;
   margin: 0 auto;
   min-height: 230px;
-  font-family: "Calluna-Regular", Georgia, serif;
-  font-size: 1.3125rem;
-  line-height: 1.875rem;
+  font-family: "Source Serif", Georgia, serif;
+  font-size: 1.375rem;
+  line-height: 1.409rem;
   background: #F2F2F2;
-  color: #1A1A1A; }
+  color: rgba(0, 0, 0, 0.77); }
   .post-full-content a {
     text-decoration: underline;
     -webkit-text-decoration-color: #999999;
             text-decoration-color: #999999; }
   @media (prefers-color-scheme: dark) {
     .post-full-content a {
-      -webkit-text-decoration-color: #B6B6B6;
-              text-decoration-color: #B6B6B6; } }
+      -webkit-text-decoration-color: #AAAAAA;
+              text-decoration-color: #AAAAAA; } }
   .post-full-content p,
   .post-full-content ol,
   .post-full-content ul,
@@ -576,15 +608,15 @@ article.home-post {
     font: inherit;
     margin-bottom: 30px;
     padding: 0 24px;
-    width: 46rem;
+    width: 48rem;
     margin-left: auto;
     margin-right: auto; }
   .post-full-content code {
     font-family: "SFMono-Regular", monospace;
-    background-color: #1A1A1A; }
+    background-color: rgba(0, 0, 0, 0.77); }
   .post-full-content p {
     text-align: left;
-    line-height: 1.9375rem; }
+    line-height: 2rem; }
     .post-full-content p strong {
       text-align: inherit; }
   .post-full-content h1,
@@ -619,12 +651,11 @@ article.home-post {
     color: #EF0000; }
   .post-full-content h6 {
     font-size: 1rem;
-    margin-top: 2.25rem;
-    margin-bottom: 1rem; }
+    margin-top: 2.25rem; }
   .post-full-content hr {
     background-color: #BFBFBF;
-    max-width: 46rem;
-    height: 2px;
+    max-width: 48rem;
+    height: 1px;
     border: none;
     margin: 2rem auto 2rem; }
   .post-full-content blockquote {
@@ -640,60 +671,52 @@ article.home-post {
       text-align: left;
       padding: 0; }
     .post-full-content blockquote em {
-      font-family: "Calluna-It", Georgia, serif; }
+      font-family: "Source Serif", Georgia, serif;
+      font-style: italic; }
       .post-full-content blockquote em strong {
-        font-family: "Calluna-BoldIt", Georgia, serif; }
+        font-family: "Source Serif", Georgia, serif;
+        font-weight: bold;
+        font-style: italic; }
     .post-full-content blockquote:before {
       content: '“'; }
     .post-full-content blockquote:after {
       content: '”'; }
   .post-full-content ol {
     padding: 0 36px 0 24px;
-    counter-reset: item; }
+    counter-reset: item;
+    margin: 0 24px 0 40px;
+    width: 48rem; }
     .post-full-content ol > li {
-      list-style-type: none;
-      list-style-position: inside;
-      -webkit-padding-start: 12px;
-              padding-inline-start: 12px;
-      margin-bottom: 1.25rem;
-      counter-increment: item;
-      line-height: 1.9375rem; }
-      .post-full-content ol > li:before {
-        display: inline-block;
-        width: 1em;
-        padding-right: 0.5em;
-        font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif;
-        text-align: right;
-        content: counter(item) ".";
-        font-variant-numeric: tabular-nums;
-        -webkit-font-feature-settings: "tnum";
-        font-feature-settings: "tnum"; }
+      list-style-type: decimal;
+      list-style-position: outside;
+      line-height: 1.5;
+      margin-bottom: 0.2rem;
+      font-variant-numeric: lining-nums; }
   .post-full-content ul {
-    padding: 0 36px 0 24px; }
+    padding: 0 36px 0 128px;
+    margin: 0 auto 24px auto;
+    width: 48rem; }
+    @media screen and (max-width: 800px) {
+      .post-full-content ul {
+        padding: 0 36px 0 24px;
+        margin: 0 24px 0 40px; } }
     .post-full-content ul li {
-      list-style-type: none;
-      list-style-position: inside;
-      -webkit-padding-start: 12px;
-              padding-inline-start: 12px;
-      margin-bottom: 1rem;
-      counter-increment: item;
-      line-height: 1.9375rem; }
-      .post-full-content ul li:before {
-        display: inline-block;
-        width: 1em;
-        padding-right: 0.5em;
-        font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif;
-        text-align: right;
-        content: "–"; }
+      list-style-type: disc;
+      list-style-position: outside;
+      margin-bottom: 0.2rem;
+      line-height: 1.5;
+      font-variant-numeric: lining-nums; }
   .post-full-content strong {
-    font-family: "Calluna-Bold", Georgia, serif; }
+    font-family: "Source Serif", Georgia, serif;
+    font-weight: bold; }
   .post-full-content em {
-    font-family: "Calluna-It", Georgia, serif; }
+    font-family: "Source Serif", Georgia, serif;
+    font-style: italic; }
   .post-full-content pre {
     padding: 24px; }
 
 section.post-full-comments {
-  width: 46rem;
+  width: 48rem;
   margin: 24px auto;
   background-color: #F9F9F9;
   margin-bottom: 12px;
@@ -721,16 +744,17 @@ section.post-full-comments {
   max-width: 100vw; }
 
 .post-template .post-content > p:first-child {
-  font-size: 1.25em;
-  line-height: 1.5em; }
+  font-size: 1.1875em;
+  line-height: 1.425;
+  letter-spacing: -0.3px; }
 
 .post-full-content .kg-image {
-  max-width: 46rem;
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto; }
 
 .fluid-width-video-container {
-  max-width: 46rem;
+  max-width: 48rem;
   margin-left: auto;
   margin-right: auto; }
 
@@ -758,7 +782,8 @@ section.post-full-comments {
   line-height: 1.5rem;
   padding-bottom: 1rem;
   text-align: center;
-  font-family: "Calluna-It", Georgia, serif;
+  font-family: "Source Serif", Georgia, serif;
+  font-style: italic;
   color: #999999; }
 
 @media (prefers-color-scheme: dark) {
@@ -767,7 +792,7 @@ section.post-full-comments {
     .post-full-content figure img {
       background-color: #191919; }
   .post-full-content figcaption {
-    color: #B6B6B6; } }
+    color: #AAAAAA; } }
 
 .kg-width-full figcaption {
   padding: 0 1.5em; }
@@ -820,7 +845,7 @@ section.post-full-comments {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 46rem; }
+  max-width: 48rem; }
 
 /* keep existing <pre> styles for code cards with captions */
 .kg-code-card {
@@ -889,7 +914,7 @@ article.post-card-inner {
     background: #353535;
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15); }
     article.post-card-inner .post-card-content time.post-full-meta-date {
-      color: #B6B6B6;
+      color: #AAAAAA;
       font-size: 100%; } }
 
 @media (max-width: 800px) {
@@ -980,7 +1005,7 @@ article.post-card-inner {
     position: relative;
     display: block;
     margin: 0;
-    padding: 27px 24px 26px 24px;
+    padding: 27px 1rem 26px 1rem;
     text-align: left;
     background-color: #F9F9F9;
     -webkit-animation: none;
@@ -1020,7 +1045,7 @@ article.post-card-inner {
     article.post-card-inner h4 {
       margin-bottom: 13px; }
     article.post-card-inner .post-card-content {
-      padding: 21px 24px 25px 24px;
+      padding: 21px 1rem 25px 1rem;
       background: #fff;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15); }
       article.post-card-inner .post-card-content h2.post-card-title {
@@ -1075,13 +1100,14 @@ article.post-card-inner {
     margin-bottom: 50px; }
     #site-main article header.post-full-header {
       width: auto;
-      padding: 0 24px; }
+      padding: 0 1rem; }
   .post-full-content {
     position: relative;
     margin: 0 auto;
     min-height: 230px;
-    font-size: 112.5%;
-    line-height: 1.4;
+    font-size: 100%;
+    line-height: 1.105;
+    font-variant-numeric: lining-nums;
     width: auto; }
     .post-full-content p,
     .post-full-content ol,
@@ -1094,7 +1120,7 @@ article.post-card-inner {
     .post-full-content pre {
       font: inherit;
       margin-bottom: 24px;
-      padding: 0 24px;
+      padding: 0 1rem;
       width: auto; }
     .post-full-content code {
       font-family: "SFMono-Regular", monospace; }
@@ -1107,9 +1133,8 @@ article.post-card-inner {
       font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
     .post-full-content h1 {
       font-size: 2rem;
-      margin-top: 3rem;
-      margin-bottom: 1.125rem;
-      line-height: 2rem; }
+      margin-top: 2rem;
+      line-height: 1.5rem; }
     .post-full-content h2 {
       font-size: 1.5rem;
       margin-top: 2.25rem;
@@ -1142,17 +1167,24 @@ article.post-card-inner {
       margin-top: 2.25rem;
       margin-bottom: 1rem; }
     .post-full-content p {
-      text-align: left; }
+      font-size: 118.75%;
+      line-height: 1.5;
+      text-align: left;
+      -ms-hyphens: auto;
+          hyphens: auto;
+      -webkit-hyphens: auto; }
       .post-full-content p strong {
         text-align: inherit; }
     .post-full-content blockquote {
       font-size: 1.25rem;
       line-height: 1.75rem;
-      padding: 30px 24px; }
+      padding: 30px 1rem; }
     .post-full-content ol {
-      padding: 0 36px 0 24px; }
+      padding: 0 36px 0 1rem;
+      font-size: 118.75%; }
     .post-full-content ul {
-      padding: 0 36px 0 24px; }
+      padding: 0 36px 0 1rem;
+      font-size: 118.75%; }
     .post-full-content hr {
       max-width: 70vw; }
   .about {
@@ -1163,7 +1195,9 @@ article.post-card-inner {
     text-align: center;
     max-width: 100vw; }
   .post-full-content .kg-image {
-    max-width: 100vw; } }
+    max-width: 100vw; }
+  article.post-full > header.post-full-header {
+    margin: 4rem auto 3rem auto !important; } }
 
 @media (prefers-color-scheme: dark) {
   article.post-card-inner.prev h4 svg, article.post-card-inner.next h4 svg {
@@ -1176,4 +1210,4 @@ article.post-card-inner {
     article.post-card-inner .post-card-content h2.post-card-title {
       font-family: "GraphikCompact-Medium", --apple-system, Helvetica, Arial, sans-serif; }
     article.post-card-inner .post-card-content time.post-full-meta-date {
-      color: #B6B6B6; } }
+      color: #AAAAAA; } }
