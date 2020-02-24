@@ -8,6 +8,11 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
+{{!-- If private tag #fn-helper is set for a post, the fn-helper script will be loaded --}}
+{{#has tag="#fn-helper"}}
+<script type="text/javascript" src="{{asset "js/ghost-footnote-helper.js"}}" defer></script>
+{{/has}}
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
 
@@ -38,7 +43,7 @@ into the {body} of the default.hbs template --}}
             </figure>
             {{/if}}
 
-            <section class="post-full-content">
+            <section id="footnoteHelper" class="post-full-content">
                 <div class="post-content">
                     {{content}}
                 </div>
