@@ -105,6 +105,10 @@ section {
     display: block;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     line-height: 1;
 }
@@ -538,7 +542,7 @@ select {
 #books {
     margin: 160px 70px 120px 70px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
     gap: 20px;
     grid-row-gap: 60px;
@@ -580,6 +584,7 @@ select {
             color: $text-color;
             display: inline-block;
             width: 100%;
+            line-height: 1.375;
         }
         h2 {
             margin-top: 20px;
@@ -1518,7 +1523,7 @@ section.footnotes {
         h1 {
             font-size: 2rem;
             margin-top: 2rem;
-            line-height: 1.5rem;
+            line-height: 2.3rem;
             letter-spacing: -0.4px;
         }
         h2 {
