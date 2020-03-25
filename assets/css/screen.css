@@ -806,14 +806,16 @@ section.post-full-comments {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F2F2F2 !important; }
+  background-color: #F2F2F2 !important;
+  flex-direction: column; }
 
 @media (prefers-color-scheme: dark) {
   .kg-embed-card {
     background-color: #191919 !important; } }
 
 .kg-embed-card .fluid-width-video-wrapper {
-  margin: 0; }
+  margin: 0;
+  width: 100%; }
 
 .kg-gallery-container {
   display: flex;

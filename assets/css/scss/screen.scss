@@ -1062,6 +1062,7 @@ section.post-full-comments {
     align-items: center;
     justify-content: center;
     background-color: $site-background-color !important;
+    flex-direction: column;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1072,6 +1073,7 @@ section.post-full-comments {
 
 .kg-embed-card .fluid-width-video-wrapper {
     margin: 0;
+    width: 100%;
 }
 
 .kg-gallery-container {
