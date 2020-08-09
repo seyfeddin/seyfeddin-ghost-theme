@@ -1,0 +1,50 @@
+{{!< default}}
+{{! The tag above means: insert everything in this file
+into the {body} of the default.hbs template }}
+
+{{> header }}
+
+<section id="videos">
+    {{#foreach posts}}
+      <article class="home-post">
+        <a class="home-post-content-link" href="{{url}}">
+          <time datetime="{{date published_at format="YYYY-MM-DD HH:mm"}}">{{date published_at format="DD MMMM YYYY"}}</time>
+          <h2 class="home-video-title">
+            {{title}}
+          </h2>
+          <p class="home-video-excerpt">
+            {{excerpt}}
+          </p>
+        </a>
+      </article>
+    {{/foreach}}
+    {{!-- <a href="#" class="all-posts">See all posts</a> --}}
+  </section>
+
+  {{#contentFor "scripts"}}
+<script>
+
+function selectItemByValue(elmnt, value){
+  console.log(elmnt);
+  for(var i=0; i < elmnt.options.length; i++)
+  {
+    console.log(elmnt.options[i].value)
+    if(elmnt.options[i].value === value) {
+      elmnt.selectedIndex = i;
+      break;
+    }
+  }
+}
+
+$(document).ready(function () {
+  console.log(window.location.pathname);
+  var pathName = window.location.pathname;
+  if (pathName.endsWith('/')) {
+        selectItemByValue(document.getElementById('post-category'), pathName.substring(0, pathName.length - 1))
+  } else {
+    selectItemByValue(document.getElementById('post-category'), pathName)
+  }
+  
+});
+</script>
+  {{/contentFor}}

@@ -344,7 +344,8 @@ a {
 }
 
 #main,
-#posts {
+#posts,
+#videos {
     min-height: calc(100vh - 310px);
 }
 
@@ -501,7 +502,8 @@ select {
     background: rgba($color: #000000, $alpha: 0.0) url(../images/down-arrow.svg) no-repeat 98% 60%;
 }
 
-#posts {
+#posts,
+#videos {
     margin: 60px auto;
     width: 48rem;
     h1 {
@@ -527,7 +529,8 @@ select {
 }
 
 @media (prefers-color-scheme: dark) {
-    #posts {
+    #posts,
+    #videos {
         h1 {
             em {
                 color: $dark-lighter-gray-color;
@@ -677,6 +680,27 @@ article.home-post {
         text-decoration: none;
         margin-top: 6px;
     }
+    h2.home-video-title {
+        font-size: 150%;
+        font-family: $font-family-medium;
+        font-weight: bold;
+        line-height: 1.3333;
+        text-decoration: none;
+        margin-top: 6px;
+        background: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    p.home-video-excerpt {
+        font-size: 100%;
+        font-family: $font-family-text;
+        font-weight: 400;
+        line-height: 1.5;
+        text-decoration: none;
+        margin-top: 6px;
+        color: $text-color;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -687,6 +711,9 @@ article.home-post {
         }
         time {
             color: $dark-light-text-color;
+        }
+        p.home-video-excerpt {
+            color: $dark-text-color;
         }
     }
 }
@@ -1303,6 +1330,14 @@ section.footnotes {
             text-decoration: underline;
             margin-top: 6px;
         }
+        h2.home-video-title {
+            font-size: 150%;
+            font-family: $font-family-medium;
+            font-weight: bold;
+            line-height: 1.3333;
+            text-decoration: underline;
+            margin-top: 6px;
+        }
     }
     article.post-card-inner {
         &.next {
@@ -1351,7 +1386,8 @@ section.footnotes {
 }
 
 @media screen and (max-width: 800px) {
-    #posts {
+    #posts,
+    #videos {
         margin: 60px auto;
         width: 100%;
     }
