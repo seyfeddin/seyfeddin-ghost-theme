@@ -1,8 +1,8 @@
 <nav>
     <ul>
       {{#foreach navigation}}
-      <li {{#if current}}class="nav-current"{{/if}}>
-        <a href="{{url absolute="true"}}">
+      <li class={{#if current}}"nav-current"{{/if}}>
+        <a href="{{url absolute="true"}}" {{#has slug="swiftui-videolari"}}class="nav-videos"{{/has}}>
           {{label}}
         </a>
       </li>
