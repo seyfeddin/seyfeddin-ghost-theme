@@ -156,6 +156,10 @@ $dark-header-background: #353535;
 $dark-footer-background: #000000;
 $dark-background-color: #191919;
 $dark-red-color: #FF000D;
+
+// Gradients
+$swiftui101-gradient: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
+$swiftui101-gradient-dark: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
 // Fonts
 $font-family: "GraphikCompact-Regular",
 --apple-system,
@@ -399,12 +403,15 @@ header.site-header {
                 }
                 a {
                     &.nav-videos {
-                        background: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
+                        background: $swiftui101-gradient;
                         background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         @media (prefers-color-scheme: dark) {
-                            background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
+                            background: $swiftui101-gradient-dark;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
                         }
                     }
                 }
@@ -698,12 +705,15 @@ article.home-post {
         line-height: 1.3333;
         text-decoration: none;
         margin-top: 6px;
-        background: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
+        background: $swiftui101-gradient;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         @media (prefers-color-scheme: dark) {
-            background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
+            background: $swiftui101-gradient-dark;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     }
     p.home-video-excerpt {
@@ -765,11 +775,16 @@ article.home-post {
     margin: 0 auto 4rem auto;
     letter-spacing: -0.8px;
     &.video-title {
-        background: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
+        background: $swiftui101-gradient;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        
+        @media (prefers-color-scheme: dark) {
+            background: $swiftui101-gradient-dark;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     }
 }
 
