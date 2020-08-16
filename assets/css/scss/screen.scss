@@ -403,6 +403,9 @@ header.site-header {
                         background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
+                        @media (prefers-color-scheme: dark) {
+                            background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
+                        }
                     }
                 }
             }
@@ -699,6 +702,9 @@ article.home-post {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        @media (prefers-color-scheme: dark) {
+            background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
+        }
     }
     p.home-video-excerpt {
         font-size: 100%;
@@ -763,6 +769,7 @@ article.home-post {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        
     }
 }
 

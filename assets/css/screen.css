@@ -309,6 +309,9 @@ header.site-header {
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent; }
+          @media (prefers-color-scheme: dark) {
+            header.site-header nav ul li a.nav-videos {
+              background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%); } }
 
 @media (prefers-color-scheme: dark) {
   header.site-header h2.title {
@@ -527,6 +530,9 @@ article.home-post {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; }
+    @media (prefers-color-scheme: dark) {
+      article.home-post h2.home-video-title {
+        background: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%); } }
   article.home-post p.home-video-excerpt {
     font-size: 100%;
     font-family: "Source Serif", Georgia, serif;
