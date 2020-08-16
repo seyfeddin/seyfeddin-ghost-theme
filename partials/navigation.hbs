@@ -2,13 +2,13 @@
     <ul>
       {{#foreach navigation}}
       <li class={{#if current}}"nav-current"{{/if}}>
-        <a href="{{url absolute="true"}}" {{#has slug="swiftui-videolari"}}class="nav-videos"{{/has}}>
+        <a href="{{url absolute="true"}}" {{#has slug="swiftui-videolari"}}class="nav-videos"{{/has}} rel="noopener">
           {{label}}
         </a>
       </li>
       {{/foreach}}
       <li>
-        <a href="#" class="disabled">
+        <a href="#" class="disabled" rel="noopener">
           Work
         </a>
       </li>
