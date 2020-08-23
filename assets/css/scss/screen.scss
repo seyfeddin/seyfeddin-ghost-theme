@@ -160,6 +160,7 @@ $dark-red-color: #FF000D;
 // Gradients
 $swiftui101-gradient: linear-gradient(107.56deg, #FF3697 0%, #2400FF 100%);
 $swiftui101-gradient-dark: linear-gradient(107.56deg, #FF3697 0%, #6688FF 100%);
+$swiftuideepdive-gradient: linear-gradient(107.56deg, #FF0000 0%, #FFA336 100%);
 // Fonts
 $font-family: "GraphikCompact-Regular",
 --apple-system,
@@ -545,6 +546,11 @@ select {
         font-size: 112.5%;
     }
 }
+#videos {
+    h1 {
+        margin-top: 60px;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     #posts,
@@ -705,15 +711,29 @@ article.home-post {
         line-height: 1.3333;
         text-decoration: none;
         margin-top: 6px;
-        background: $swiftui101-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        @media (prefers-color-scheme: dark) {
-            background: $swiftui101-gradient-dark;
+        &.swiftui101 {
+            background: $swiftui101-gradient;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            @media (prefers-color-scheme: dark) {
+                background: $swiftui101-gradient-dark;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+        &.swiftuideepdive {
+            background: $swiftuideepdive-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            @media (prefers-color-scheme: dark) {
+                background: $swiftuideepdive-gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
         }
     }
     p.home-video-excerpt {
@@ -775,15 +795,30 @@ article.home-post {
     margin: 0 auto 4rem auto;
     letter-spacing: -0.8px;
     &.video-title {
-        background: $swiftui101-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        @media (prefers-color-scheme: dark) {
-            background: $swiftui101-gradient-dark;
+        &.swiftui101 {
+            background: $swiftui101-gradient;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            @media (prefers-color-scheme: dark) {
+                background: $swiftui101-gradient-dark;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+
+        &.swiftuideepdive {
+            background: $swiftuideepdive-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            @media (prefers-color-scheme: dark) {
+                background: $swiftuideepdive-gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
         }
     }
 }

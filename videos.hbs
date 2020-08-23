@@ -6,11 +6,12 @@ into the {body} of the default.hbs template }}
 
 <section id="videos">
     <h1>SwiftUI ile iOS Geliştirme</h1>
+    {{#get "posts" filter="tag:swiftui101" include="tags" order="published_at desc"}}
     {{#foreach posts}}
       <article class="home-post">
         <a class="home-post-content-link" href="{{url}}">
           <time datetime="{{date published_at format="YYYY-MM-DD HH:mm"}}">{{date published_at format="DD MMMM YYYY"}}</time>
-          <h2 class="home-video-title">
+          <h2 class="home-video-title swiftui101">
             {{title}}
           </h2>
           <p class="home-video-excerpt">
@@ -18,8 +19,26 @@ into the {body} of the default.hbs template }}
           </p>
         </a>
       </article>
-    {{/foreach}}
+      {{/foreach}}
+    {{/get}}
     {{!-- <a href="#" class="all-posts">See all posts</a> --}}
+
+    <h1>SwiftUI'a Derin Bakış</h1>
+    {{#get "posts" filter="tag:swiftuideepdive" include="tags" order="published_at desc"}}
+    {{#foreach posts}}
+      <article class="home-post">
+        <a class="home-post-content-link" href="{{url}}">
+          <time datetime="{{date published_at format="YYYY-MM-DD HH:mm"}}">{{date published_at format="DD MMMM YYYY"}}</time>
+          <h2 class="home-video-title swiftuideepdive">
+            {{title}}
+          </h2>
+          <p class="home-video-excerpt">
+            {{excerpt}}
+          </p>
+        </a>
+      </article>
+      {{/foreach}}
+    {{/get}}
   </section>
 
   {{#contentFor "scripts"}}
